@@ -1,10 +1,16 @@
 // Include http module.
-var http = require('http');
+var http = require('http'), fs = require('fs');
 
-http.createServer(function (request, response) {
+fs.readFile('../app/index.html', function (err, html) {
+	if(err) {
+		throw err;
+	}
 
-	response.writeHead(200, {'Content-Type': 'text/plain'});
-	response.end('Hello World\n');
-}).listen(8080);
+	http.createServer(function (request, response) {
 
+		response.writeHead(200, {'Content-Type': 'text/plain'});
+		response.write(html);
+		response.end();
+	}).listen(8080);
+});
 console.log("listening");
