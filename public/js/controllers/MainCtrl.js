@@ -1,5 +1,3 @@
-angular.module('MainCtrl', []).controller('MainController', function($scope) {
-
-    $scope.tagline = 'Test';
-
-});
+'use strict';
+var angular = require('angular');
+var app = angular.module('app');
