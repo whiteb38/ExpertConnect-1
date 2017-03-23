@@ -7,7 +7,7 @@
 				"name": "Product Line Leader",
 				"Experts" : [
 					{"Role" : "Product Manager", "SSO" : 212410435},
-					{"Role" : "Product Manager", "SSO" : 212410460}				
+					{"Role" : "Product Manager", "SSO" : 212410460}
 					]
 				}]
 			},
@@ -16,14 +16,14 @@
 				"name": "Product Line Leader",
 				"Experts" : [
 					{"Role" : "Product Manager", "SSO" : 212410435},
-					{"Role" : "Product Manager", "SSO" : 212410460}				
+					{"Role" : "Product Manager", "SSO" : 212410460}
 					]
 				},
 				{
 				"name": "NEMA Product Management",
 				"Experts" : [
 					{"Role" : "Product Manager", "SSO" : 212410435},
-					{"Role" : "Product Manager", "SSO" : 212410460}				
+					{"Role" : "Product Manager", "SSO" : 212410460}
 					]
 				}]
 			}

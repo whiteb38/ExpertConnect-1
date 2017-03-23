@@ -1,10 +1,11 @@
 webpackJsonp([0],[
-/* 0 */
+/* 0 */,
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var angular = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"angular\""); e.code = 'MODULE_NOT_FOUND';; throw e; }()));
+var angular = __webpack_require__(0);
 var app = angular.module('app');
 app.controller('dataCtrl', function($scope, dataService){
   dataService.getData(function(response){
@@ -15,13 +16,13 @@ app.controller('dataCtrl', function($scope, dataService){
 module.exports = 'dataCtrl';
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35,13 +36,14 @@ angular.module('app')
 module.exports = 'dataService';
 
 /***/ }),
-/* 3 */
+/* 4 */,
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var angular = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"angular\""); e.code = 'MODULE_NOT_FOUND';; throw e; }()));
+var angular = __webpack_require__(0);
 angular.module('app', ['ngRoute'])
 /* .config(['$routeProvider', function($routeProvider){
   $routeProvider
@@ -60,10 +62,10 @@ angular.module('app', ['ngRoute'])
 } 
 ]);*/
 
-__webpack_require__(0);
 __webpack_require__(1);
 __webpack_require__(2);
+__webpack_require__(3);
 
 
 /***/ })
-],[3]);
+],[5]);
