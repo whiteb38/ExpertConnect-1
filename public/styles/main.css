@@ -1,59 +1,168 @@
-/* The side navigation menu */
-.sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 200px; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0;
-    left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
+/*!
+ * main custom css for expert connect
+ * authors: Brendon White     &    Steve Gehrig
+ *       brendon.white@ge.com   steven.gehrig@ge.com
+ */
+
+
+
+ 
+/*white divider line in nav-side bar*/
+.divider {
+  *width: 100%;
+  height: 1px;
+  margin: 9px 1px;
+  *margin: -5px 0 5px;
+  overflow: hidden;
+  background-color: #e5e5e5;
+  border-bottom: 1px solid #ffffff;
+}
+ 
+ 
+/*main container*/
+.main-container {
+	margin-top: 75px; /*50px top,*/
+	margin-right: 5%; /*50px right*/
+	margin-left: 5%; /*50px right*/
+} 
+ 
+
+/*columns*/
+@media (min-width: 992px) {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+  }
+
+  .col-md-8 {
+    width: 70%;
+  }
+
+  .col-md-4 {
+    width: 350px;
+  }
+  
+  .col-md-1 {
+	  width: 10%;
+  }
+
 }
 
-.sidenav ul a {
-    padding: 0px 0px 0px -30px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    cursor: default;
-    list-style: none;
+/*cards*/
+
+.deck-title {
+	color: #000000;
+	font-size: 20px;
 }
 
-.sidenav li a {
-    padding: 0px 0px 0px 60px;
-    text-decoration: none;
-    font-size: 15px;
-    color: #818181;
-    display: block;
-    list-style: none;
+.card {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
 }
 
-/* When you mouse over the navigation links, change their color */
-.sidenav :hover, .offcanvas a:focus{
-    color: #f1f1f1;
-    cursor: pointer;
+@media (min-width: 500px) {
+  .card-deck {
+	margin-bottom: 50px;
+	background-color: #e5e5e5;
+	padding: 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  .card-deck .card {
+	  width: 300px;
+	  
+/*     display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 0%;
+        -ms-flex: 1 0 0%;
+            flex: 1 0 0%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; */
+  }
+  .card-deck .card {
+    margin-left: 10px;
+	margin-bottom: 10px;
+  }
+  .card-deck .card {
+	margin-top: 10px;
+    margin-right: 10px;
+  }
 }
 
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-    margin-left: 250px;
-    padding: 20px;
+.card-block {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 0.5rem;
 }
 
-.list-group {
-  font-size: 15px;
+.card-name {
+
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+.card-subtitle {
+  margin-top: -0.375rem;
+  margin-bottom: 0;
 }
 
-/* card style */
-.carddemoBasicUsage .card-media {
-  background-color: #999999;
+.card-phone {
+	color: #848484;
+	float: left;
+}
+
+.card-phone:last-child {
+  margin-bottom: 0;
+}
+
+.card-link:hover {
+  text-decoration: none;
+}
+
+.card-email {
+	margin-left: 10px;
+	margin-top: 4px;
+	float: left;
+	width: 15px;
+	height:12px;
+}
+
+.card-link + .card-link {
+  margin-left: 1.25rem;
+}
+
+.card-title-top {
+	font-size: 17px;
+	color: #444444;
+	margin: auto;
+	margin-top: 0.50rem;
+}
+
+.card-img-left {
+	float: left;
+	height: 60px;
+	width: 60px;
+	margin-left: 0.50rem;
 }

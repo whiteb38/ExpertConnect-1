@@ -2,7 +2,7 @@
 'use strict';
 var angular = require('angular');
 angular.module('app', ['ngRoute'])
-.config(['$routeProvider', function($routeProvider){
+/* .config(['$routeProvider', function($routeProvider){
   $routeProvider
     .when('/', {
       templateUrl : '/../../views/template1.html',
@@ -16,8 +16,8 @@ angular.module('app', ['ngRoute'])
     .when('/servicesTwo', {
       templateUrl : '/../../views/template3.html',
     })
-}
-]);
+} 
+]);*/
 
 require('./controllers/MainCtrl.js');
 require('./directives/directives.js');

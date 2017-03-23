@@ -1,0 +1,34 @@
+{
+	"units" : [{
+		"name" : "Configured Solutions",
+		"categories" : [
+			{"name" : "Flow Goods and EVSE",
+			"subcategories" : [{
+				"name": "Product Line Leader",
+				"Experts" : [
+					{"Role" : "Product Manager", "SSO" : 212410435},
+					{"Role" : "Product Manager", "SSO" : 212410460}				
+					]
+				}]
+			},
+			{"name" : "Low Voltage Distribution Equipment",
+			"subcategories" : [{
+				"name": "Product Line Leader",
+				"Experts" : [
+					{"Role" : "Product Manager", "SSO" : 212410435},
+					{"Role" : "Product Manager", "SSO" : 212410460}				
+					]
+				},
+				{
+				"name": "NEMA Product Management",
+				"Experts" : [
+					{"Role" : "Product Manager", "SSO" : 212410435},
+					{"Role" : "Product Manager", "SSO" : 212410460}				
+					]
+				}]
+			}
+		]
+	}
+
+	]
+}

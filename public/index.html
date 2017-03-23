@@ -1,30 +1,114 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
-  <head>
-    <meta charset="UTF-8">
-    <title>title</title>
-    <link rel="stylesheet" href="styles/main.css" type="text/css">
-    <script type="text/javascript" src="vendor/vendor.bundle.js"></script>
-    <script src="/vendor/angular-route.js"></script>
-    <script type="text/javascript" src="vendor/app.bundle.js"></script>
 
-  </head>
-  <body>
-    <div>
-      <div id="mySidenav" class="sidenav">
-        <ul> <a href='/'>Home</a></ul>
-        <ul><a href=#>Services</a></ul>
-          <li><a href='#!/servicesOne'>Sub Category</a></li>
-          <li><a href='#!/servicesTwo'>Sub Category</a></li>
-        <ul><a href="#">Clients</a></ul>
-          <li><a href=#>Sub Category</a></li>
-          <li><a href="#">Sub Category</a></li>
-        <ul><a href="#">Contact</a></ul>
-          <li><a href="#">Sub Category</a></li>
-          <li><a href="#">Sub Category</a></li>
-      </div>
-      <div id='main'>
-        <div ng-view></div>
-      </div>
+<html lang="en" ng-app="app">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>IS Expert Connect</title>
+		<!-- STYLES -->
+		<link rel="stylesheet" href="styles/main.css" type="text/css">
+		<link rel="stylesheet" href="styles/bootstrap.css" type="text/css">
+		<link rel="stylesheet" href="styles/bootstrap-responsive.css" type="text/css">
+		<!-- JS -->	
+	<!-- 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
+		<script type="text/javascript" src="vendor/vendor.bundle.js"></script>
+		<script src="/vendor/angular-route.js"></script>
+		<script type="text/javascript" src="vendor/app.bundle.js"></script>
+	</head>
+  
+	<!-- @ng-cloak: prevents template from being briefly displayed by the browser in its raw uncompiled form -->
+	<!-- @data: data to be pulled in-->
+	<body ng-cloak>
+	
+	<!--////////////////////////////////////////////////////////////////////////////////////////-->
+	<!------------------------------------ HEADER  ----------------------------------------------->
+	<!--////////////////////////////////////////////////////////////////////////////////////////-->
+	<div class="page-header">
+		<div class="container-fluid" style="padding-bottom:5px;">
+			<span style="float:left; margin-top:8px; margin-right:7px;"><img src="assets/img/logo.png"/></span>
+				<h1><span style="color:#ffffff; margin-top:8px; height:30px; float:left; margin-right:10px;">Expert Connect  
+			<span style="color:#cccccc; margin-top:8px; font-size:22px;"> Powered by Industrial Solutions</span></span></h1>
+		</div>
+	</div>
+
+	<!--////////////////////////////////////////////////////////////////////////////////////////-->
+	<!-------------------------------- SIDE SEARCH & NAV TREE ------------------------------------>
+	<!--////////////////////////////////////////////////////////////////////////////////////////-->
+	
+	<div class="container-fluid" ng-controller="dataCtrl">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="well" style="width:350px; padding: 8px 0;">
+					<div style="height: 100vh;">
+					<div style="margin-top:15px; margin-bottom:30px">
+						<span style="color:#000000; font-size:30px; margin-left:30px;">Select unit... </span>
+					
+					<!-- SEARCH -->
+					<div class="input-append" style="margin-top:5px;">
+						<input id="appendedInputButton" ng-model="srch" type="text" placeholder="... or search" style="height:20px;width:100%;margin-left:30px;">
+						<button class="btn btn-primary" id="d" type="button" onclick="showOption('searchDiv','d')"><p style="height: 10px;">go</p></button>
+					</div>
+					</div>				
+
+					
+					<!-- NAV TREE -->				
+					<div class="divider"></div>
+						<ul class="nav nav-list">
+							<!-- LOOP with ng-repeat -->
+							<li ng-repeat="x in data"><label class="tree-toggler nav-header">{{x.units.name}}</label>
+								<ul ng-repeat="y in x.units" class="nav nav-list tree">
+									<li class="nav-category"><label>{{y.categories.name}}</label></li>
+								</ul>
+								<div class="divider"/> 
+							</li>
+							
+						</ul>
+						<div style="margin-left:15px; margin-top:50px;">
+							<span style="color:#000000; font-size:14px;">Not listed or wrong data? let us know <a href="mailto:ecsupport@ge.com">here</a> </span>	
+						</div>						
+					</div>
+				</div>
+			</div>
+		
+
+	
+	<!--////////////////////////////////////////////////////////////////////////////////////////-->
+	<!-------------------------------------- MAIN DETAILS ---------------------------------------->
+	<!--////////////////////////////////////////////////////////////////////////////////////////-->
+			<div class="col-md-8">
+				<div class="main-container">
+					<div class="deck-title"> Product Line Leader </div>
+						<div class="card-deck">
+						
+						
+						  <div class="card">
+							<p class="card-title-top"> IEC Power Devices </p>
+							<div class="card-block">
+							  <img class="card-img-left" src="assets/img/person.png">
+							  <h4 class="card-name">First Last</h4>
+							  <p class="card-phone">+34 937365754</p>	
+							  <img class="card-email" src="assets/img/email.png">
+							</div>
+						  </div>
+						
+						</div>
+
+						
+				</div>
+				
+			</div>
+		</div> <!-- Row -->
+	</div> <!-- Container-fluid -->
+	
+	
+	<!--////////////////////////////////////////////////////////////////////////////////////////-->
+	<!---------------------------------------- SCRIPTS ------------------------------------------->
+	<!--////////////////////////////////////////////////////////////////////////////////////////-->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="vendor/bootstrap.min.js"></script>
+	<script src="js/functions.js"></script>
   </body>
 </html>
