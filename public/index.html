@@ -9,12 +9,15 @@
 		<!-- STYLES -->
 		<link rel="stylesheet" href="styles/main.css" type="text/css">
 		<link rel="stylesheet" href="styles/bootstrap.css" type="text/css">
+		 <<!-- link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
 		<link rel="stylesheet" href="styles/bootstrap-responsive.css" type="text/css">
 		<!-- JS -->
-	<!-- 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
 		<script type="text/javascript" src="vendor/vendor.bundle.js"></script>
 		<script src="/vendor/angular-route.js"></script>
+		<script src="/vendor/ui-bootstrap-tpls.js"></script>
+		<script src="/vendor/angular-animate.js"></script>
 		<script type="text/javascript" src="vendor/app.bundle.js"></script>
+		
 	</head>
 
 	<!-- @ng-cloak: prevents template from being briefly displayed by the browser in its raw uncompiled form -->
@@ -31,12 +34,31 @@
 			<span style="color:#cccccc; margin-top:8px; font-size:22px;"> Powered by Industrial Solutions</span></span></h1>
 		</div>
 	</div>
+	
+	
 
 	<!--////////////////////////////////////////////////////////////////////////////////////////-->
 	<!-------------------------------- SIDE SEARCH & NAV TREE ------------------------------------>
 	<!--////////////////////////////////////////////////////////////////////////////////////////-->
 
 	<div class="container-fluid" ng-controller="dataCtrl">
+		  <script type="text/ng-template" id="group-template.html">
+			<div class="panel-heading">
+			  <h4 class="panel-title" style="color:#fa39c3">
+				<a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading">
+				  <span uib-accordion-header ng-class="{'text-muted': isDisabled}">
+					{{heading}}
+				  </span>
+				</a>
+			  </h4>
+			</div>
+			<div class="panel-collapse collapse" uib-collapse="!isOpen">
+			  <div class="panel-body" style="text-align: right" ng-transclude></div>
+			</div>
+		  </script>
+		  
+		   <uib-accordion close-others="true">
+	
 		<div class="row">
 			<div class="col-md-4">
 				<div class="well" style="width:350px; padding: 8px 0;">
@@ -51,19 +73,18 @@
 					</div>
 					</div>
 
-
 					<!-- NAV TREE -->
 					<div class="divider"></div>
 						<ul class="nav nav-list">
-							<!-- LOOP with ng-repeat -->
-							<li ng-repeat="x in data.units"><label class="tree-toggler nav-header">{{x.name}}</label>
-								<ul ng-repeat="y in x.categories" class="nav nav-list tree">
-									<li class="nav-category"><label>{{y.name}}</label></li>
-								</ul>
-								<div class="divider"/>
-							</li>
 
+							<!-- LOOP with ng-repeat -->
+							<li uib-accordion-group class="panel-default" heading={{x.name}} ng-repeat="x in data.units">
+									<ul ng-repeat="y in x.categories">
+										<li ng-click="clicked()" class="nav-category"><label>{{y.name}}</label></li>
+									</ul>
+							</li>						
 						</ul>
+						
 						<div style="margin-left:15px; margin-top:50px;">
 							<span style="color:#000000; font-size:14px;">Not listed or wrong data? let us know <a href="mailto:ecsupport@ge.com">here</a> </span>
 						</div>
@@ -72,43 +93,44 @@
 			</div>
 
 
-
 	<!--////////////////////////////////////////////////////////////////////////////////////////-->
 	<!-------------------------------------- MAIN DETAILS ---------------------------------------->
 	<!--////////////////////////////////////////////////////////////////////////////////////////-->
 			<div class="col-md-8">
 				<div class="main-container">
-					<div class="deck-title"> Product Line Leader </div>
+				<div ng-repeat="x in experts.subcategories">
+					<div  class="deck-title"> {{x.name}} </div>
 						<div class="card-deck">
 
-
-						  <div class="card">
-							<p class="card-title-top"> IEC Power Devices </p>
+						  <div class="card" ng-repeat="y in x.Experts">
+							<p class="card-title-top"> {{y.Role}} </p>
 							<div class="card-block">
 							  <img class="card-img-left" src="assets/img/person.png">
 							  <h4 class="card-name">First Last</h4>
-							  <p class="card-phone">+34 937365754</p>
+							  <p class="card-phone">{{y.SSO}}</p>
 							  <img class="card-email" src="assets/img/email.png">
 							</div>
 						  </div>
 
 						</div>
-
+				</div>
 
 				</div>
 
 			</div>
 		</div> <!-- Row -->
 	</div> <!-- Container-fluid -->
+	
+</div>
+
 
 
 	<!--////////////////////////////////////////////////////////////////////////////////////////-->
 	<!---------------------------------------- SCRIPTS ------------------------------------------->
 	<!--////////////////////////////////////////////////////////////////////////////////////////-->
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="vendor/bootstrap.js"></script>
-	<script src="js/functions.js"></script>
+    <script src="js/functions.js"></script>
   </body>
 </html>
